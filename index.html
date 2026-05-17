@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hikari Quest Design | Tazas Gamer, Anime y Series</title>
+    <meta name="description" content="Tienda de tazas personalizadas con diseños de anime, videojuegos y series. Encuentra tu taza perfecta en Hikari Quest Design.">
+    <link rel="icon" href="images/logo.jpg">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <img src="images/logo.jpg" alt="Hikari Quest Design">
+                <span class="logo-text">Hikari Quest</span>
+            </a>
+            
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav-link active">Inicio</a>
+                <a href="productos.html" class="nav-link">Productos</a>
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="cart-btn" id="cart-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/>
+                        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+                    </svg>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <button class="menu-btn" id="menu-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="videos/hero-video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container hero-content">
+            <span class="hero-badge">Nueva Coleccion 2024</span>
+            <h1 class="hero-title">Tazas con Personalidad</h1>
+            <p class="hero-description">
+                Descubre nuestra coleccion exclusiva de tazas con diseños de anime, videojuegos y series. 
+                Cada taza cuenta una historia unica.
+            </p>
+            <div class="hero-buttons">
+                <a href="productos.html" class="btn btn-primary btn-lg">Ver Catalogo</a>
+                <a href="#categorias" class="btn btn-outline btn-lg">Explorar Categorias</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="section" id="productos-destacados">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Lo Mas Vendido</span>
+                <h2 class="section-title">Productos Destacados</h2>
+                <p class="section-description">Las tazas favoritas de nuestros clientes</p>
+            </div>
+            <div class="products-grid" id="featured-products">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+            <div class="section-footer">
+                <a href="productos.html" class="btn btn-primary">Ver Todos los Productos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section section-alt" id="categorias">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Categorias</span>
+                <h2 class="section-title">Explora Nuestras Colecciones</h2>
+                <p class="section-description">Encuentra la taza perfecta para ti o para regalar</p>
+            </div>
+            <div class="categories-grid">
+                <a href="productos.html?categoria=anime" class="category-card">
+                    <div class="category-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="category-title">Anime</h3>
+                    <p class="category-description">Naruto, Dragon Ball, One Piece y mas</p>
+                    <span class="category-count">6 productos</span>
+                </a>
+                <a href="productos.html?categoria=gamer" class="category-card">
+                    <div class="category-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/>
+                            <line x1="15" x2="15.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/>
+                            <rect width="20" height="12" x="2" y="6" rx="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="category-title">Gamer</h3>
+                    <p class="category-description">PlayStation, Xbox, Nintendo y mas</p>
+                    <span class="category-count">6 productos</span>
+                </a>
+                <a href="productos.html?categoria=series" class="category-card">
+                    <div class="category-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="15" x="2" y="7" rx="2" ry="2"/>
+                            <polyline points="17 2 12 7 7 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="category-title">Series</h3>
+                    <p class="category-description">Breaking Bad, Friends, The Office y mas</p>
+                    <span class="category-count">6 productos</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Por que elegirnos</span>
+                <h2 class="section-title">La Mejor Experiencia de Compra</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11"/>
+                            <path d="M14 9h4l4 4v4c0 .6-.4 1-1 1h-2"/>
+                            <circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Envio Rapido</h3>
+                    <p class="feature-description">Entrega en 24-48 horas a todo el pais</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Pago Seguro</h3>
+                    <p class="feature-description">Tus datos siempre protegidos</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Calidad Premium</h3>
+                    <p class="feature-description">Materiales de la mas alta calidad</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+                            <path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
+                            <path d="M8 16H3v5"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Devoluciones Faciles</h3>
+                    <p class="feature-description">30 dias para cambios y devoluciones</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section section-newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title">Unete a Nuestra Comunidad</h2>
+                <p class="newsletter-description">
+                    Suscribete para recibir novedades, ofertas exclusivas y descuentos especiales
+                </p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Tu correo electronico" class="newsletter-input" required>
+                    <button type="submit" class="btn btn-primary">Suscribirme</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="images/logo.jpg" alt="Hikari Quest Design">
+                        <span>Hikari Quest Design</span>
+                    </a>
+                    <p class="footer-description">
+                        Tu tienda de tazas personalizadas con los mejores diseños de anime, videojuegos y series.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="TikTok">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">Categorias</h4>
+                    <ul>
+                        <li><a href="productos.html?categoria=anime">Anime</a></li>
+                        <li><a href="productos.html?categoria=gamer">Gamer</a></li>
+                        <li><a href="productos.html?categoria=series">Series</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">Contacto</h4>
+                    <ul>
+                        <li>info@hikariquest.com</li>
+                        <li>+1 234 567 890</li>
+                        <li>Lun - Vie: 9am - 6pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hikari Quest Design. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Tu Carrito</h2>
+            <button class="cart-close" id="cart-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded by JavaScript -->
+        </div>
+        <div class="cart-footer" id="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="checkout-btn">Proceder al Pago</button>
+        </div>
+    </aside>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-message" id="toast-message"></span>
+    </div>
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

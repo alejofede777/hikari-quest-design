@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos | Hikari Quest Design</title>
+    <meta name="description" content="Explora nuestra coleccion de tazas de anime, videojuegos y series.">
+    <link rel="icon" href="images/logo.jpg">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <img src="images/logo.jpg" alt="Hikari Quest Design">
+                <span class="logo-text">Hikari Quest</span>
+            </a>
+            
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="productos.html" class="nav-link active">Productos</a>
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="cart-btn" id="cart-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/>
+                        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+                    </svg>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <button class="menu-btn" id="menu-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Nuestros Productos</h1>
+            <p class="page-description">Descubre nuestra coleccion completa de tazas</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section products-section">
+        <div class="container">
+            <div class="products-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <div class="filter-group">
+                        <h3 class="filter-title">Buscar</h3>
+                        <div class="search-box">
+                            <input type="text" id="search-input" placeholder="Buscar productos..." class="search-input">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+                                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3 class="filter-title">Categorias</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="radio" name="categoria" value="todos" checked>
+                                <span class="filter-label">Todos</span>
+                                <span class="filter-count" id="count-todos">18</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="categoria" value="anime">
+                                <span class="filter-label">Anime</span>
+                                <span class="filter-count">6</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="categoria" value="gamer">
+                                <span class="filter-label">Gamer</span>
+                                <span class="filter-count">6</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="categoria" value="series">
+                                <span class="filter-label">Series</span>
+                                <span class="filter-count">6</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3 class="filter-title">Ordenar por</h3>
+                        <select id="sort-select" class="sort-select">
+                            <option value="destacados">Destacados</option>
+                            <option value="precio-asc">Precio: Menor a Mayor</option>
+                            <option value="precio-desc">Precio: Mayor a Menor</option>
+                            <option value="nombre">Nombre A-Z</option>
+                        </select>
+                    </div>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="products-main">
+                    <div class="products-header">
+                        <p class="products-count"><span id="products-count">18</span> productos encontrados</p>
+                        <button class="filters-toggle" id="filters-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                            </svg>
+                            Filtros
+                        </button>
+                    </div>
+                    <div class="products-grid" id="products-grid">
+                        <!-- Products will be loaded by JavaScript -->
+                    </div>
+                    <div class="no-products" id="no-products" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+                        </svg>
+                        <h3>No se encontraron productos</h3>
+                        <p>Intenta con otra busqueda o categoria</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="images/logo.jpg" alt="Hikari Quest Design">
+                        <span>Hikari Quest Design</span>
+                    </a>
+                    <p class="footer-description">
+                        Tu tienda de tazas personalizadas con los mejores diseños de anime, videojuegos y series.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">Categorias</h4>
+                    <ul>
+                        <li><a href="productos.html?categoria=anime">Anime</a></li>
+                        <li><a href="productos.html?categoria=gamer">Gamer</a></li>
+                        <li><a href="productos.html?categoria=series">Series</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">Contacto</h4>
+                    <ul>
+                        <li>info@hikariquest.com</li>
+                        <li>+1 234 567 890</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hikari Quest Design. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Tu Carrito</h2>
+            <button class="cart-close" id="cart-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer" id="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="checkout-btn">Proceder al Pago</button>
+        </div>
+    </aside>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-message" id="toast-message"></span>
+    </div>
+
+    <!-- Filters Overlay (Mobile) -->
+    <div class="filters-overlay" id="filters-overlay"></div>
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/productos-page.js"></script>
+</body>
+</html>
