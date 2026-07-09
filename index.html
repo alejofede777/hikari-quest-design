@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hikari Quest Design | Tazas Gamer, Anime y Series</title>
     <meta name="description" content="Tienda de tazas personalizadas con diseños de anime, videojuegos y series. Encuentra tu taza perfecta en Hikari Quest Design.">
+    <meta name="keywords" content="tazas, anime, gamer, series, tazas personalizadas, mugs, regalos frikis, Hikari Quest">
+    <meta name="author" content="Hikari Quest Design">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1a1a2e">
+    <!-- Open Graph (redes sociales) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hikari Quest Design | Tazas Gamer, Anime y Series">
+    <meta property="og:description" content="Tazas personalizadas con diseños de anime, videojuegos y series.">
+    <meta property="og:image" content="images/logo.jpg">
     <link rel="icon" href="images/logo.jpg">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,10 +29,12 @@
                 <span class="logo-text">Hikari Quest</span>
             </a>
             
-            <nav class="nav" id="nav">
-                <a href="index.html" class="nav-link active">Inicio</a>
-                <a href="productos.html" class="nav-link">Productos</a>
-                <a href="contacto.html" class="nav-link">Contacto</a>
+            <nav class="nav" id="nav" aria-label="Navegacion principal">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active" aria-current="page">Inicio</a></li>
+                    <li><a href="productos.html" class="nav-link">Productos</a></li>
+                    <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+                </ul>
             </nav>
             
             <div class="header-actions">
@@ -43,6 +54,7 @@
         </div>
     </header>
 
+    <main id="main-content">
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-video-container">
@@ -181,6 +193,63 @@
         </div>
     </section>
 
+    <!-- Reviews Section (CSS Grid) -->
+    <section class="section section-alt" id="resenas">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Testimonios</span>
+                <h2 class="section-title">Reseñas de Clientes</h2>
+                <p class="section-description">Lo que opinan quienes ya tienen su taza Hikari</p>
+            </div>
+            <div class="reviews-grid">
+                <article class="review-card">
+                    <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                    <p class="review-text">"La taza de Naruto superó mis expectativas. Los colores son vivos y no se despintan con los lavados. La recomiendo totalmente."</p>
+                    <div class="review-author">
+                        <span class="review-avatar" aria-hidden="true">M</span>
+                        <div>
+                            <p class="review-name">Martina López</p>
+                            <p class="review-role">Cliente verificada</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="review-card">
+                    <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                    <p class="review-text">"Compré la de PlayStation para mi hermano y llegó en 48 horas. Excelente calidad y muy buen empaque. Volveré a comprar."</p>
+                    <div class="review-author">
+                        <span class="review-avatar" aria-hidden="true">J</span>
+                        <div>
+                            <p class="review-name">Julián Rodríguez</p>
+                            <p class="review-role">Cliente verificado</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="review-card">
+                    <div class="review-stars" aria-label="4 de 5 estrellas">★★★★☆</div>
+                    <p class="review-text">"Hermosa la taza de Stranger Things, ideal para regalar. El diseño retro está increíble y el precio es justo."</p>
+                    <div class="review-author">
+                        <span class="review-avatar" aria-hidden="true">C</span>
+                        <div>
+                            <p class="review-name">Camila Fernández</p>
+                            <p class="review-role">Cliente verificada</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="review-card">
+                    <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                    <p class="review-text">"Segunda compra que hago. Apta para microondas como prometen y el material se siente premium. Atención al cliente de 10."</p>
+                    <div class="review-author">
+                        <span class="review-avatar" aria-hidden="true">D</span>
+                        <div>
+                            <p class="review-name">Diego Martínez</p>
+                            <p class="review-role">Cliente verificado</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Newsletter Section -->
     <section class="section section-newsletter">
         <div class="container">
@@ -196,6 +265,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="footer">

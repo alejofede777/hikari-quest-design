@@ -36,8 +36,11 @@ function initProductsPage() {
     initSort();
     initMobileFilters();
     
-    // Cargar productos
-    loadProducts();
+    // Mostrar estado de carga mientras llega la respuesta de la API
+    productsGrid.innerHTML = '<p class="products-loading">Cargando productos...</p>';
+    
+    // Esperar a que los productos se carguen desde la API REST (fetch) y luego renderizar
+    productsReady.then(loadProducts);
 }
 
 /* ================================

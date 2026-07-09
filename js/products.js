@@ -1,189 +1,39 @@
 /* ================================
-   PRODUCTOS - Base de datos de productos
+   PRODUCTOS - Consumo de API REST con fetch
+   Los datos se obtienen desde un endpoint JSON (nuestra propia API REST)
    ================================ */
 
-const products = [
-    // ANIME
-    {
-        id: 1,
-        name: "Taza Naruto Uzumaki",
-        category: "anime",
-        price: 15.99,
-        originalPrice: 19.99,
-        image: "images/products/naruto.jpg",
-        badge: "sale",
-        featured: true,
-        description: "Taza con diseño del ninja mas famoso de Konoha"
-    },
-    {
-        id: 2,
-        name: "Taza Attack on Titan",
-        category: "anime",
-        price: 16.99,
-        image: "images/products/aot.jpg",
-        badge: "new",
-        featured: true,
-        description: "Emblema del Cuerpo de Exploracion"
-    },
-    {
-        id: 3,
-        name: "Taza My Hero Academia",
-        category: "anime",
-        price: 14.99,
-        image: "images/products/mha.jpg",
-        featured: false,
-        description: "Diseño Plus Ultra con los heroes de UA"
-    },
-    {
-        id: 4,
-        name: "Taza Dragon Ball Z",
-        category: "anime",
-        price: 15.99,
-        image: "images/products/dbz.jpg",
-        featured: true,
-        description: "Goku Super Saiyan en toda su gloria"
-    },
-    {
-        id: 5,
-        name: "Taza Demon Slayer",
-        category: "anime",
-        price: 17.99,
-        originalPrice: 21.99,
-        image: "images/products/demon-slayer.jpg",
-        badge: "sale",
-        featured: false,
-        description: "Tanjiro y los cazadores de demonios"
-    },
-    {
-        id: 6,
-        name: "Taza One Piece",
-        category: "anime",
-        price: 15.99,
-        image: "images/products/one-piece.jpg",
-        badge: "new",
-        featured: true,
-        description: "La tripulacion del Sombrero de Paja"
-    },
+// URL del endpoint de la API REST de productos
+const PRODUCTS_API_URL = 'data/products.json';
 
-    // GAMER
-    {
-        id: 7,
-        name: "Taza PlayStation Classic",
-        category: "gamer",
-        price: 14.99,
-        image: "images/products/playstation.jpg",
-        featured: true,
-        description: "Iconos clasicos de PlayStation"
-    },
-    {
-        id: 8,
-        name: "Taza Xbox Gamer",
-        category: "gamer",
-        price: 14.99,
-        image: "images/products/xbox.jpg",
-        featured: false,
-        description: "Diseño verde Xbox para gamers"
-    },
-    {
-        id: 9,
-        name: "Taza Nintendo Retro",
-        category: "gamer",
-        price: 16.99,
-        originalPrice: 19.99,
-        image: "images/products/nintendo.jpg",
-        badge: "sale",
-        featured: true,
-        description: "Iconos retro de Nintendo"
-    },
-    {
-        id: 10,
-        name: "Taza Minecraft",
-        category: "gamer",
-        price: 13.99,
-        image: "images/products/minecraft.jpg",
-        badge: "new",
-        featured: false,
-        description: "Creeper y bloques pixelados"
-    },
-    {
-        id: 11,
-        name: "Taza Fortnite",
-        category: "gamer",
-        price: 14.99,
-        image: "images/products/fortnite.jpg",
-        featured: false,
-        description: "Battle Royale en tu taza"
-    },
-    {
-        id: 12,
-        name: "Taza League of Legends",
-        category: "gamer",
-        price: 16.99,
-        image: "images/products/lol.jpg",
-        featured: true,
-        description: "Champions legendarios"
-    },
+// Array donde se almacenan los productos una vez cargados desde la API
+let products = [];
 
-    // SERIES
-    {
-        id: 13,
-        name: "Taza Breaking Bad",
-        category: "series",
-        price: 15.99,
-        image: "images/products/breaking-bad.jpg",
-        featured: true,
-        description: "Heisenberg en tu escritorio"
-    },
-    {
-        id: 14,
-        name: "Taza Game of Thrones",
-        category: "series",
-        price: 17.99,
-        originalPrice: 22.99,
-        image: "images/products/got.jpg",
-        badge: "sale",
-        featured: false,
-        description: "El Trono de Hierro te espera"
-    },
-    {
-        id: 15,
-        name: "Taza Stranger Things",
-        category: "series",
-        price: 15.99,
-        image: "images/products/stranger-things.jpg",
-        badge: "new",
-        featured: true,
-        description: "El Upside Down en estilo retro"
-    },
-    {
-        id: 16,
-        name: "Taza The Office",
-        category: "series",
-        price: 14.99,
-        image: "images/products/the-office.jpg",
-        featured: true,
-        description: "World's Best Boss"
-    },
-    {
-        id: 17,
-        name: "Taza Friends",
-        category: "series",
-        price: 14.99,
-        image: "images/products/friends.jpg",
-        featured: false,
-        description: "Central Perk en tu hogar"
-    },
-    {
-        id: 18,
-        name: "Taza The Mandalorian",
-        category: "series",
-        price: 16.99,
-        image: "images/products/mandalorian.jpg",
-        badge: "new",
-        featured: false,
-        description: "This is the way"
+/**
+ * Consume los productos desde la API REST usando fetch.
+ * Devuelve una promesa con el array de productos.
+ */
+async function fetchProducts() {
+    try {
+        const response = await fetch(PRODUCTS_API_URL);
+
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
+        }
+
+        const data = await response.json();
+        products = data;
+        return products;
+    } catch (error) {
+        console.error('[v0] No se pudieron cargar los productos desde la API:', error);
+        products = [];
+        return products;
     }
-];
+}
+
+// Promesa global: se resuelve cuando los productos terminan de cargarse.
+// Las demas paginas (inicio y catalogo) esperan a esta promesa antes de renderizar.
+const productsReady = fetchProducts();
 
 // Funcion para obtener todos los productos
 function getAllProducts() {

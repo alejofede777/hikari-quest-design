@@ -82,10 +82,13 @@ function initMobileMenu() {
 /* ================================
    PRODUCTOS DESTACADOS (Homepage)
    ================================ */
-function initFeaturedProducts() {
+async function initFeaturedProducts() {
     const container = document.getElementById('featured-products');
     
     if (!container) return;
+    
+    // Esperar a que los productos se carguen desde la API REST (fetch)
+    await productsReady;
     
     // Obtener productos destacados
     const featured = getFeaturedProducts();
