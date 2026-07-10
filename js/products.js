@@ -6,6 +6,19 @@
 // URL del endpoint de la API REST de productos
 const PRODUCTS_API_URL = 'data/products.json';
 
+/**
+ * Formatea un numero como precio en pesos argentinos.
+ * Ejemplo: 12000 -> "$12.000"
+ */
+function formatARS(price) {
+    return new Intl.NumberFormat('es-AR', {
+        style: 'currency',
+        currency: 'ARS',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    }).format(price);
+}
+
 // Array donde se almacenan los productos una vez cargados desde la API
 let products = [];
 
@@ -98,7 +111,7 @@ function renderProductCard(product) {
         : '';
     
     const originalPriceHTML = product.originalPrice 
-        ? `<span class="price-original">$${product.originalPrice.toFixed(2)}</span>` 
+        ? `<span class="price-original">${formatARS(product.originalPrice)}</span>` 
         : '';
 
     return `
@@ -124,7 +137,7 @@ function renderProductCard(product) {
                 <span class="product-category">${product.category}</span>
                 <h3 class="product-name">${product.name}</h3>
                 <div class="product-price">
-                    <span class="price-current">$${product.price.toFixed(2)}</span>
+                    <span class="price-current">${formatARS(product.price)}</span>
                     ${originalPriceHTML}
                 </div>
                 <button class="product-add-btn" onclick="addToCart(${product.id})">

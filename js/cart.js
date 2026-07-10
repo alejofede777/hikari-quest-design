@@ -122,7 +122,7 @@ function updateCartUI() {
                     <img src="${item.image}" alt="${item.name}" class="cart-item-image">
                     <div class="cart-item-info">
                         <h4 class="cart-item-name">${item.name}</h4>
-                        <p class="cart-item-price">$${item.price.toFixed(2)}</p>
+                        <p class="cart-item-price">${formatARS(item.price)}</p>
                         <div class="cart-item-quantity">
                             <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
                             <span class="quantity-value">${item.quantity}</span>
@@ -143,7 +143,7 @@ function updateCartUI() {
     // Actualizar total
     const cartTotal = document.getElementById('cart-total');
     if (cartTotal) {
-        cartTotal.textContent = `$${getCartTotal().toFixed(2)}`;
+        cartTotal.textContent = formatARS(getCartTotal());
     }
     
     // Mostrar/ocultar footer del carrito
@@ -205,7 +205,7 @@ function checkout() {
     // Aqui iria la logica real de checkout
     // Por ahora solo mostramos un mensaje
     const total = getCartTotal();
-    showToast(`Procesando compra por $${total.toFixed(2)}...`, 'success');
+    showToast(`Procesando compra por ${formatARS(total)}...`, 'success');
     
     // Simular proceso de compra
     setTimeout(() => {
